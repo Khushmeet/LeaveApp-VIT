@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.developer.gdgvit.leaveapp" >
+
+    <application
+        android:name=".LeaveAppClass"
+        android:allowBackup="true"
+        android:icon="@drawable/khushmeet_logo_vit"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="com.developer.gdgvit.leaveapp.login_activity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity
+            android:name="com.developer.gdgvit.leaveapp.Home"
+            android:label="@string/app_name" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".dataHandlers.Apply_Leave_Service"></service>
+
+        <activity
+            android:name="com.developer.gdgvit.leaveapp.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/PreferenceScreen"
+            android:parentActivityName="com.developer.gdgvit.leaveapp.Home" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.developer.gdgvit.leaveapp.Home" />
+        </activity>
+
+        <activity android:name=".about"
+            android:label="About"
+            android:parentActivityName="com.developer.gdgvit.leaveapp.Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.developer.gdgvit.leaveapp.Home" />
+
+            </activity>
+
+        <!-- SyncAdapters Dummy Authenticator Service -->
+        <service
+            android:name=".syncAdaptors.LeaveAppAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+
+        <!-- SyncAdapter Stub Content Provider -->
+        <provider
+            android:name=".dataHandlers.LeaveContentProvider"
+            android:authorities="com.developer.gdgvit.leaveapp.app"
+            android:exported="false"
+            android:syncable="true"/>
+
+        <!-- SyncAdapters Service -->
+        <service
+            android:name=".syncAdaptors.LeaveAppSyncService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadaptor" />
+        </service>
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Permissions for SyncAdapter to work -->
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+
+</manifest>

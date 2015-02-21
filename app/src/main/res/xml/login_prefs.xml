@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory
+    android:title="Credentials">
+
+    <EditTextPreference
+        android:title="@string/reg_no_title"
+        android:key="@string/reg_no_key"
+        android:inputType="text"
+        android:singleLine="true"
+        android:summary="Put your Registration number Here"
+        android:defaultValue="" />
+
+  <EditTextPreference
+        android:title="@string/pass_title"
+        android:key="@string/pass_key"
+        android:defaultValue=""
+        android:inputType="textPassword"
+        android:summary="@string/passwordpref"
+        android:password="true"
+        android:singleLine="true"/>
+
+</PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Notifications">
+
+    <CheckBoxPreference
+        android:title="@string/pref_enable_notifications_label"
+        android:key="@string/pref_enable_notifications_key"
+        android:summaryOff="@string/pref_enable_notifications_false"
+        android:summaryOn="@string/pref_enable_notifications_true"
+        android:defaultValue="@string/pref_enable_notifications_default" />
+    </PreferenceCategory>
+</PreferenceScreen>
