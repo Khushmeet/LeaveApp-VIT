@@ -18,8 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.developer.gdgvit.leaveapp.Setpass"
+            android:label="@string/app_name" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name="com.developer.gdgvit.leaveapp.Home"
@@ -37,7 +45,6 @@
         <activity
             android:name="com.developer.gdgvit.leaveapp.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:theme="@style/PreferenceScreen"
             android:parentActivityName="com.developer.gdgvit.leaveapp.Home" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -46,11 +53,10 @@
 
         <activity android:name=".about"
             android:label="About"
-            android:parentActivityName="com.developer.gdgvit.leaveapp.Home">
+            android:parentActivityName=".Home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.developer.gdgvit.leaveapp.Home" />
-
+                android:value=".Home"/>
             </activity>
 
         <!-- SyncAdapters Dummy Authenticator Service -->

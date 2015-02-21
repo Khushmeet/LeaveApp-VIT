@@ -20,17 +20,32 @@ import android.widget.Button;
 public class login_activity extends Activity {
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,b11,b12,b13;
     TextView t1,t2;
+    int done=0;
     public static Activity fa;
     Intent i;
     public static String cname="Home";
     boolean fla=true;
 
     int temp1=0;
+
     login_activity ob;
     @Override
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+
+        if (isFirstRun) {
+            //show start activity
+
+            startActivity(new Intent(login_activity.this, Setpass.class));
+
+        }
+
+
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
         setContentView(R.layout.login_activity);
         ob= new login_activity();
         temp1++;
@@ -58,7 +73,20 @@ public class login_activity extends Activity {
         //t1.setText("");
         b11.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(t1.getText().toString().equals("1234"))
+                Dblogin b=new Dblogin(login_activity.this);
+                b.open();
+                String str[]=b.retrieve();
+                b.close();
+                if(str!=null)
+                {
+                    String c=t1.getText().toString();
+                    if(str[0].equals(c))
+                    {
+                        done=1;
+                    }
+                }
+
+                if(done==1)
                 {
 
                     v.startAnimation(animAlpha);
