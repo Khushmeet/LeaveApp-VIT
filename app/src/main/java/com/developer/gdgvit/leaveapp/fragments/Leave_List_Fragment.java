@@ -169,6 +169,7 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
                     df = new Detail_View_Fragment();
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
+                    ft.setCustomAnimations(R.anim.pop_enter,R.anim.pop_exit,R.anim.pop_enter_one,R.anim.pop_exit_one);
                     df.setArguments(dataBundle);
                     if (LeaveAppClass.TWO_PANE_UI)
                         ft.replace(R.id.detailContainer, df, "detail");
@@ -191,6 +192,7 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
                     if (new CheckInternet(getActivity()).state()) {
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
+                        ft.setCustomAnimations(R.anim.pop_enter,R.anim.pop_exit,R.anim.pop_enter_one,R.anim.pop_exit_one);
                         if (LeaveAppClass.TWO_PANE_UI)
                             ft.replace(R.id.detailContainer, new Apply_New_Leave_Fragment(), "apply");
                         else
