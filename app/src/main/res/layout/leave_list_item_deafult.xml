@@ -9,7 +9,8 @@
         android:orientation="vertical"
         android:layout_width="222dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,12 +22,14 @@
             android:text="@string/to"
             android:id="@+id/placeTextView"
             android:textSize="20sp"
+            android:textColor="#212121"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nod"
+            android:textColor="#212121"
             android:id="@+id/nODTextView"
             android:textSize="20sp"
             android:textStyle="bold"/>
@@ -34,6 +37,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
 
     </LinearLayout>
 
@@ -54,21 +59,34 @@
             android:text="@string/extDate"
             android:id="@+id/extDateTextView"
             android:textSize="20sp"
+            android:textColor="#212121"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Reason"
+            android:id="@+id/reason"
+            android:textColor="#212121"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/status"
+            android:paddingTop="8dp"
             android:id="@+id/statusTextView"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+
     </LinearLayout>
+
 
 
 

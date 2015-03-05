@@ -21,7 +21,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/leaveList"
-            android:layout_gravity="start" />
+            android:layout_gravity="start"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
 
         <com.melnykov.fab.FloatingActionButton
             xmlns:fab="http://schemas.android.com/apk/res-auto"
