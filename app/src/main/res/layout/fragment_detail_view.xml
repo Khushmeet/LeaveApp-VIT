@@ -145,10 +145,15 @@
         android:weightSum="1">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/slnoValue"
             android:textSize="20sp" />
 
@@ -158,6 +163,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
             android:id="@+id/applOnValue"
+            android:textColor="#424242"
             android:textSize="20sp" />
 
         <TextView
@@ -166,6 +172,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
             android:id="@+id/applToValue"
+            android:textColor="#424242"
             android:textSize="20sp" />
 
         <TextView
@@ -173,6 +180,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/leaveValue"
             android:textSize="20sp"
             android:layout_weight="0.09" />
@@ -182,6 +190,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/placeValue"
             android:textSize="20sp" />
 
@@ -190,6 +199,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/exitValue"
             android:textSize="20sp" />
 
@@ -198,6 +208,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/entryValue"
             android:textSize="20sp" />
 
@@ -206,6 +217,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/nodValue"
             android:textSize="20sp" />
 
@@ -214,6 +226,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/apprByValue"
             android:textSize="20sp" />
 
@@ -222,6 +235,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/apprOnValue"
             android:textSize="20sp" />
 
@@ -230,6 +244,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nullText"
+            android:textColor="#424242"
             android:id="@+id/statusValue"
             android:textSize="20sp" />
 
