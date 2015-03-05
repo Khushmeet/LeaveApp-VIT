@@ -43,6 +43,7 @@ public class Home extends ActionBarActivity {
     public static final String AUTHORITY = "com.developer.gdgvit.leaveapp.app";
 
     public static String reg, pass;
+    Toolbar toolbar;
 
     ContentResolver mResolver;
     public boolean wasPaused = false;
@@ -52,7 +53,8 @@ public class Home extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
-
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 
