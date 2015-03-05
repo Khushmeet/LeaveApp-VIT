@@ -13,7 +13,7 @@
 
     </style>
 
-    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
