@@ -135,10 +135,10 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
                 {
                     ((TextView)view).setText(cursor.getString(cursor.getColumnIndex(LeaveEntry.COL_STATUS)));
                     if(cursor.getString(cursor.getColumnIndex(LeaveEntry.COL_STATUS)).equals("Approved")){
-                        ((TextView)view).setTextColor(Color.parseColor("#4CAF50"));
+                        ((TextView)view).setTextColor(Color.parseColor("#388E3C"));
                     }
                     else{
-                        ((TextView)view).setTextColor(Color.parseColor("#F44336"));
+                        ((TextView)view).setTextColor(Color.parseColor("#F57F17"));
                     }
 
                 }
@@ -161,7 +161,7 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
                 Log.i(LeaveAppClass.Log_Tag, "Leave Fragment | Extra | Exit Date: " + exit);
 
                 if (exit.equals(exit_on))
-                    Toast.makeText(getActivity(), "Provide the login details in setting and refresh first... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Provide the login details in setting and refresh first", Toast.LENGTH_LONG).show();
                 else {
                     Bundle dataBundle = new Bundle();
                     dataBundle.putString(Home.Sl_NO_TAG, slNo);
@@ -200,10 +200,10 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
                         ft.addToBackStack(null);
                         ft.commit();
                     } else {
-                        Toast.makeText(getActivity(), "Please connect to internet first.. :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Please connect to internet first", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(getActivity(), "Please provide reg no and password in settings.. :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please provide reg no and password in settings", Toast.LENGTH_LONG).show();
                 }
 
             }

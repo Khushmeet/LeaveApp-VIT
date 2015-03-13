@@ -13,11 +13,16 @@
 
         <Button
             android:id="@+id/applyNowBtn"
-            android:layout_width="match_parent"
-            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="203dp"
+            android:elevation="12dp"
+            android:textColor="@android:color/white"
+            android:background="@xml/raised_button_background"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#FF4081"
+            android:textSize="16sp"
             android:text="@string/apply" />
     </LinearLayout>
 
@@ -37,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/auth"
-                android:textColor="#FF4081"
+                android:textColor="@color/colorAccent"
                 android:textSize="14sp" />
 
             <Spinner
@@ -54,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/leave"
-                android:textColor="#FF4081"
+                android:textColor="@color/colorAccent"
                 android:textSize="14sp" />
 
             <Spinner
@@ -71,13 +76,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/exitOn"
-                android:textColor="#FF4081"
+                android:textColor="@color/colorAccent"
                 android:textSize="14sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
+                android:textSize="17sp"
                 android:ems="10"
                 android:maxLines="5"
                 android:id="@+id/exitOnValue" />
@@ -91,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/entryOn"
                 android:inputType="date"
-                android:textColor="#FF4081"
+                android:textColor="@color/colorAccent"
                 android:textSize="14sp" />
 
             <EditText
@@ -99,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:ems="10"
+                android:textSize="17sp"
                 android:maxLines="5"
                 android:id="@+id/entryOnValue" />
 
@@ -111,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:maxLines="5"
+                android:textSize="17sp"
                 android:hint="@string/place"
                 android:id="@+id/placeToValue" />
 
@@ -124,6 +132,7 @@
                 android:hint="@string/reason"
                 android:singleLine="true"
                 android:paddingTop="5dp"
+                android:textSize="17sp"
                 android:ems="10"
                 android:id="@+id/reasonValue" />
 

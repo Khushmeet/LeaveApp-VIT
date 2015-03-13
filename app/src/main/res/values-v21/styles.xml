@@ -14,4 +14,9 @@
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
+    <style name="applyNowBtn" parent="android:style/Widget.Material.Button">
+        <item name="android:background">@xml/raised_button_background</item>
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+    </style>
+
 </resources>

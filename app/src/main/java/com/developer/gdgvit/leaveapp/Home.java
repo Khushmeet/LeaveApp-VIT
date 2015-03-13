@@ -28,8 +28,7 @@ public class Home extends ActionBarActivity {
 
     public static final String EXIT_DATE_TAG = "exit_date";
     public static final String Sl_NO_TAG = "sl_no";
-    login_activity ob=new login_activity();
-    static int temp=0;
+
     public static final String AUTH_TAG = "auth";
     public static final String LEAVE_TYPE_TAG = "leave_type";
     public static final String EXIT_ON_TAG = "exit";
@@ -119,14 +118,14 @@ public class Home extends ActionBarActivity {
 
 
                 if (new CheckInternet(this).state()) {
-                    Toast.makeText(this, "Sync started... :)", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Sync started", Toast.LENGTH_LONG).show();
 
                     LeaveAppSyncAdapter.syncImmediately(this);
                 } else
-                    Toast.makeText(this, "OOPS! Please connect to internet first... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "OOPS! Please connect to internet first", Toast.LENGTH_LONG).show();
 
             } else
-                Toast.makeText(this, "Please provide login id and password in the settings..", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Please provide login id and password in the settings", Toast.LENGTH_LONG).show();
 
             return true;
         } else if (id == R.id.action_settings) {
@@ -150,29 +149,14 @@ public class Home extends ActionBarActivity {
     protected void onPause() {
         super.onPause();
 
-        ob.finish();
+
     }
 
     @Override
     public void onRestart() {
         super.onRestart();
 
-        new login_activity().run().cname="Home";
 
-        if (temp==0)
-        {
-
-
-            try {
-                Class<?> Ourclass = Class.forName("com.developer.gdgvit.leaveapp.login_activity");
-                Intent ourIntent = new Intent(Home.this, Ourclass);
-                startActivity(ourIntent);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-            System.exit(0);
-        }
-        temp=0;
 
 
         // Get the Camera instance as the activity achieves full user focus

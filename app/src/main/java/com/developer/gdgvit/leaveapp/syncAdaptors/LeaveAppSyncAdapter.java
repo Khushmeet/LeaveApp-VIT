@@ -262,7 +262,7 @@ public class LeaveAppSyncAdapter extends AbstractThreadedSyncAdapter {
                 approvedBy = leaveJSON.getString(APPROVED_BY);
                 approvedOn = leaveJSON.getString(APPROVED_ON);
 
-               exit = Utility.deformDateE(exit);
+                exit = Utility.deformDateE(exit);
                 entry = Utility.deformDateE(entry);
 
                 appliedOn = Utility.deformDateE(appliedOn);
@@ -393,7 +393,7 @@ public class LeaveAppSyncAdapter extends AbstractThreadedSyncAdapter {
             // notifications. Just throw in some data.
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(getContext())
-                            .setSmallIcon(R.drawable.ic_launcher)
+                            .setSmallIcon(R.drawable.leave_app_launcher)
                             .setContentTitle(context.getString(R.string.app_name))
                             .setContentText(contentText);
 
@@ -474,7 +474,7 @@ public class LeaveAppSyncAdapter extends AbstractThreadedSyncAdapter {
             Log.i(LeaveAppClass.Log_Tag, "SyncAdapter Get Account | In Else");
         }
 
-            //onAccountCreated(newAccount, context);
+        //onAccountCreated(newAccount, context);
 
         return newAccount;
     }

@@ -81,5 +81,9 @@
     <!-- Detail View String -->
     <string name="defaultText">Choose a leave to view detail here. :)</string>
     <string name="settings">Settings</string>
+    <string name="app_signup">Login</string>
+    <string name="reg_no">Registration no.</string>
+    <string name="password_hint">Password</string>
+    <string name="login_btn_text">Login</string>
 
 </resources>

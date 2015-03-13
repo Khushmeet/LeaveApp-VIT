@@ -141,7 +141,7 @@ public class Apply_Leave_Service extends Service {
                     //new Leave_List_Fragment().showToast("OOPS! Something went wrong!! :(");
                     //Toast.makeText(getApplicationContext(), "Incorrect Regno and password :(", Toast.LENGTH_LONG).show();
                     //stopSelf();
-                    return "Incorrect Regno and password :(";
+                    return "Incorrect Regno and password";
                 }
 
                 Log.i(LeaveAppClass.Log_Tag, "Login Success");
@@ -160,7 +160,7 @@ public class Apply_Leave_Service extends Service {
                 if (inputStream == null) {
                     //Toast.makeText(getApplicationContext(), "OOPS! Something went wrong :(", Toast.LENGTH_LONG).show();
                     //stopSelf();
-                    return "OOPS! Something went wrong :(";
+                    return "OOPS! Something went wrong";
                     //nothing to do
                 }
 
@@ -174,7 +174,7 @@ public class Apply_Leave_Service extends Service {
                 if (buffer.length() == 0) {
                     //Toast.makeText(getApplicationContext(), "OOPS! Something went wrong :(", Toast.LENGTH_LONG).show();
                     //stopSelf();
-                    return "OOPS! Something went wrong :(";
+                    return "OOPS! Something went wrong";
                     //nothing to do
                 }
 
@@ -201,7 +201,7 @@ public class Apply_Leave_Service extends Service {
         @Override
         protected void onPostExecute(String res) {
 
-            if(res.equals("Leave Applied Successfully... :)"))
+            if(res.equals("Leave Applied Successfully"))
                 LeaveAppSyncAdapter.syncImmediately(getApplicationContext());
 
             showToast(res);

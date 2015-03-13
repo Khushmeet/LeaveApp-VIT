@@ -40,7 +40,9 @@ public class DBContract {
 
         public static Uri buildLeaveUriFromId(long _id)
         {
+
             return ContentUris.withAppendedId(Content_Uri, _id);
+
         }
 
         public static Uri buildLeaveUriWithDate(String exitDate)

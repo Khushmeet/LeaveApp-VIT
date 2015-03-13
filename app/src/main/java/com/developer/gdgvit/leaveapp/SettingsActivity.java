@@ -2,11 +2,9 @@ package com.developer.gdgvit.leaveapp;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -14,15 +12,14 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
-import android.widget.EditText;
 
 import com.developer.gdgvit.leaveapp.syncAdaptors.LeaveAppSyncAdapter;
 
 
 public class SettingsActivity extends PreferenceActivity {
-    int temp=0;
+
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
-    login_activity ob=new login_activity();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,57 +27,10 @@ public class SettingsActivity extends PreferenceActivity {
         addPreferencesFromResource(R.xml.login_prefs);
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.reg_no_key)));
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pass_key)));
 
-
-
+        setupActionBar();
     }
-
-
-    public void onBackPressed() {
-        /*try {
-            Class<?> Ourclass = Class.forName("com.developer.gdgvit.leaveapp.Home");
-            Intent ourIntent = new Intent(SettingsActivity.this, Ourclass);
-            startActivity(ourIntent);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        finish(); */
-        Home ob=new Home();
-        ob.temp=1;
-        finish();
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ob.finish();
-        finish();
-    }
-
-   /* @Override
-    public void onRestart() {
-        super.onRestart();
-        if(temp==0)
-        {
-
-
-        new login_activity().run().cname="SettingsActivity";
-        try {
-            Class<?> Ourclass = Class.forName("com.developer.gdgvit.leaveapp.login_activity");
-            Intent ourIntent = new Intent(SettingsActivity.this, Ourclass);
-            startActivity(ourIntent);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        }
-
-
-
-
-        // Get the Camera instance as the activity achieves full user focus
-        // Local method to handle camera init
-    } */
 
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -89,7 +39,6 @@ public class SettingsActivity extends PreferenceActivity {
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             // Show the Up button in the action bar.
-
 
         }
     }
@@ -167,13 +116,6 @@ public class SettingsActivity extends PreferenceActivity {
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
      */
-
-
-
-
-
-
-
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
@@ -221,7 +163,6 @@ public class SettingsActivity extends PreferenceActivity {
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
                         .getString(preference.getKey(), ""));
-
     }
 
     /**

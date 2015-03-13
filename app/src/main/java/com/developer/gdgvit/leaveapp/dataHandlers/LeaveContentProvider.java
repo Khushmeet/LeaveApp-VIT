@@ -7,7 +7,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
 
+import com.developer.gdgvit.leaveapp.LeaveAppClass;
 import com.developer.gdgvit.leaveapp.dataHandlers.DBContract.LeaveEntry;
 
 /**
@@ -107,19 +109,22 @@ public class LeaveContentProvider extends ContentProvider {
         switch(mUriMatcher.match(uri))
         {
             case LEAVE:
+                getContext().getContentResolver().notifyChange(uri, null);
+
                 long _id = db.insert(LeaveEntry.TB_NAME, null, contentValues);
-                    if(_id > 0)
-                        retUri = LeaveEntry.buildLeaveUriFromId(_id);
-                    else
-                        throw new SQLException("Failed to insert row to " + uri);
+                Log.i(LeaveAppClass.Log_Tag, ""+_id);
+               /* if(_id > 0) {
+                    retUri = LeaveEntry.buildLeaveUriFromId(_id);
+                }
+                else {
+                    throw2 new SQLException("Failed to insert row to " + uri);
+                }*/
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown Uri:" +uri);
         }
 
-        getContext().getContentResolver().notifyChange(uri, null);
-
-        return null;
+        return  null;
     }
 
     @Override

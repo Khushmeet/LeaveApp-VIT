@@ -36,7 +36,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 LeaveEntry.COL_STATUS + " TEXT NOT NULL, " +
                 LeaveEntry.COL_APPROVED_BY + " TEXT NOT NULL, " +
                 LeaveEntry.COL_APPROVED_ON + " TEXT  NOT NULL," +
-                " UNIQUE (  " + LeaveEntry.COL_EXIT_ON + " ) ON CONFLICT IGNORE );";
+                " UNIQUE (  " + LeaveEntry.COL_EXIT_ON + " ) ON CONFLICT " +
+                "REPLACE );";
 
         sqLiteDatabase.execSQL(createTB_Qry);
 

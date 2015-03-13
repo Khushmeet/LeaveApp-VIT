@@ -13,8 +13,12 @@
 
     </style>
 
-    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:textColor">@color/colorAccent</item>
+    <style name="PreferenceScreen" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+
+
+
 
 </resources>

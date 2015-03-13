@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.2\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
+        <dex dex="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\pre-dexed\debug\classes-378d689708372a3eac896bdb0bcab71ae745c944.jar" />
+    </item>
+    <item
         jar="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -35,13 +42,6 @@
         revision="21.1.2"
         sha1="4796f18d3750bf2bfa078407a94a7f9db35b440d">
         <dex dex="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\pre-dexed\debug\classes-2b4d323cc497b85dadf3dcffaffcfc654993d039.jar" />
-    </item>
-    <item
-        jar="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7d2525cba8ed61fff102977caed964fc22061e34">
-        <dex dex="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\pre-dexed\debug\classes-cb3421e3071662aa7f49fd89d9cb4be5e7b7e815.jar" />
     </item>
     <item
         jar="E:\SOURCE_CODE\Android_Studio_Workspace\LeaveApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"

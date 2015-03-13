@@ -8,14 +8,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,7 +21,7 @@ import android.widget.Toast;
 import com.developer.gdgvit.leaveapp.Home;
 import com.developer.gdgvit.leaveapp.R;
 import com.developer.gdgvit.leaveapp.dataHandlers.Apply_Leave_Service;
-import com.developer.gdgvit.leaveapp.login_activity;
+
 
 /**
  * Created by pk on 29/12/14.
@@ -90,15 +88,15 @@ public class Apply_New_Leave_Fragment extends Fragment {
                 temp=0;
 
                 if(exit.getText().toString().equals("")) {
-                    Toast.makeText(getActivity(), "Please provide the exit date... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please provide the exit date", Toast.LENGTH_LONG).show();
 
                 }
                 else if(entry.getText().toString().equals(""))
-                    Toast.makeText(getActivity(), "Please provide the entry date... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please provide the entry date", Toast.LENGTH_LONG).show();
                 else if(place.getText().toString().equals(""))
-                    Toast.makeText(getActivity(), "Please provide the address... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please provide the address", Toast.LENGTH_LONG).show();
                 else if(reason.getText().toString().equals(""))
-                    Toast.makeText(getActivity(), "Please provide the reason for leave... :(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Please provide the reason for leave", Toast.LENGTH_LONG).show();
                 else
                 {
                     first=exit.getText().toString();
@@ -114,16 +112,16 @@ public class Apply_New_Leave_Fragment extends Fragment {
                     if(first.length()==8)
                     {
                         find1=2;
-                        Toast.makeText(getActivity(), "Enter Two Digits for Month and Date On Exit :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Enter Two Digits for Month and Date On Exit", Toast.LENGTH_LONG).show();
                     }
                     if (second.length()==8)
                     {   find2=2;
-                        Toast.makeText(getActivity(), "Enter Two Digits for Month and Date On Entry :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Enter Two Digits for Month and Date On Entry", Toast.LENGTH_LONG).show();
                     }
                     if((find1==0)||(find2==0))
                     {
 
-                        Toast.makeText(getActivity(), "Enter Date Properly... :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Enter Date Properly", Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -144,9 +142,9 @@ public class Apply_New_Leave_Fragment extends Fragment {
                             {
                                 find1=0;
                                 if((d==29) || (d==30))
-                                    Toast.makeText(getActivity(), "This is February Month :(", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "This is February Month", Toast.LENGTH_LONG).show();
                                 else
-                                    Toast.makeText(getActivity(), "Invalid Month on Exit :(", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "Invalid Month on Exit", Toast.LENGTH_LONG).show();
                             }
 
                         }
@@ -160,7 +158,7 @@ public class Apply_New_Leave_Fragment extends Fragment {
                         }
                         else
                         {
-                            Toast.makeText(getActivity(), "Invalid Date on Exit :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Invalid Date on Exit", Toast.LENGTH_LONG).show();
                             find1=0;
                         }
                         }
@@ -171,7 +169,7 @@ public class Apply_New_Leave_Fragment extends Fragment {
                         }
                         else
                         {
-                            Toast.makeText(getActivity(), "Invalid Month on Exit :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Invalid Month on Exit", Toast.LENGTH_LONG).show();
                             find1=0;
                         }
 
@@ -185,14 +183,14 @@ public class Apply_New_Leave_Fragment extends Fragment {
                         }
                         else
                         {
-                            Toast.makeText(getActivity(), "Invalid year on Exit :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Invalid year on Exit", Toast.LENGTH_LONG).show();
                             find1=0;
                         }
 
 
                     }catch(Exception e)
                     {
-                        Toast.makeText(getActivity(), "Invalid Entry on Exit :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Invalid Entry on Exit", Toast.LENGTH_LONG).show();
                         find1=0;
                     }
                 }
@@ -213,9 +211,9 @@ public class Apply_New_Leave_Fragment extends Fragment {
                             {
                                 find1=0;
                                 if((d==29) || (d==30))
-                                Toast.makeText(getActivity(), "This is February Month :(", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), "This is February Month", Toast.LENGTH_LONG).show();
                                 else
-                                    Toast.makeText(getActivity(), "Invalid Month on Entry :(", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "Invalid Month on Entry", Toast.LENGTH_LONG).show();
 
                             }
 
@@ -230,7 +228,7 @@ public class Apply_New_Leave_Fragment extends Fragment {
                             }
                             else
                             {
-                                Toast.makeText(getActivity(), "Invalid Date on Entry :(", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), "Invalid Date on Entry", Toast.LENGTH_LONG).show();
                                 find1=0;
                             }
                         }
@@ -241,7 +239,7 @@ public class Apply_New_Leave_Fragment extends Fragment {
                         }
                         else
                         {
-                            Toast.makeText(getActivity(), "Invalid Month on Entry  :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Invalid Month on Entry", Toast.LENGTH_LONG).show();
                             find1=0;
                         }
 
@@ -255,14 +253,14 @@ public class Apply_New_Leave_Fragment extends Fragment {
                         }
                         else
                         {
-                            Toast.makeText(getActivity(), "Invalid year on Entry :(", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Invalid year on Entry", Toast.LENGTH_LONG).show();
                             find1=0;
                         }
 
 
                     }catch(Exception e)
                     {
-                        Toast.makeText(getActivity(), "Invalid Entry on Entry :(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Invalid Entry on Entry", Toast.LENGTH_LONG).show();
                         find2=0;
                     }
                 }
