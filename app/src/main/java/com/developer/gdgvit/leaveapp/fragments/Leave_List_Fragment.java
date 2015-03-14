@@ -148,7 +148,7 @@ public class Leave_List_Fragment extends Fragment implements LoaderManager.Loade
 
         leaveList.setAdapter(mLeaveAdapter);
 
-            leaveList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        leaveList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {

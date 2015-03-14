@@ -158,12 +158,16 @@ public class LeaveAppSyncAdapter extends AbstractThreadedSyncAdapter {
             }
 
             if (buffer.length() == 0) {
+                Log.i(LeaveAppClass.Log_Tag,"buffer=0");
                 // Stream was empty. No point in parsing.
                 //new Leave_List_Fragment().showToast("OOPS! Something went wrong!! :(");
                 return;
-            }
 
-            Log.i(LeaveAppClass.Log_Tag, "SyncAdapter | Buffer Data 1 " + buffer.toString());
+            }
+            if(buffer.toString().contentEquals(("invalid"))) {
+
+                Log.i(LeaveAppClass.Log_Tag, "SyncAdapter | Buffer Data 1 " + buffer.toString());
+            }
 
             if(buffer.toString().contentEquals("invalid"))
             {

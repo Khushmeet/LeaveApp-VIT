@@ -3,6 +3,7 @@ package com.developer.gdgvit.leaveapp.dataHandlers;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 
 import com.developer.gdgvit.leaveapp.LeaveAppClass;
 
@@ -15,7 +16,7 @@ import com.developer.gdgvit.leaveapp.LeaveAppClass;
 public class CheckIdPass {
 
     Context context;
-
+    SharedPreferences pref;
     public CheckIdPass(Context context)
     {
         this.context = context;
@@ -23,8 +24,7 @@ public class CheckIdPass {
 
     public boolean checkIdPas()
     {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-
+        pref  = PreferenceManager.getDefaultSharedPreferences(context);
         String reg = pref.getString("reg_no","");  //Registration Number
         String pas = pref.getString("pass", ""); //Password
 
@@ -34,9 +34,16 @@ public class CheckIdPass {
 
     public String getData(String key)
     {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-
+        pref  = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(key, "");
+    }
+
+    public String putData(String key, String value){
+        pref  = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key,value);
+        editor.commit();
+        return null;
     }
 
 }
