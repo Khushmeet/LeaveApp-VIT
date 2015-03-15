@@ -1,8 +1,17 @@
 package com.developer.gdgvit.leaveapp;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.Notification;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.DatabaseErrorHandler;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -10,17 +19,27 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.test.suitebuilder.annotation.Suppress;
+import android.util.Log;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.developer.gdgvit.leaveapp.syncAdaptors.LeaveAppSyncAdapter;
 
 
-public class SettingsActivity extends PreferenceActivity {
+public class SettingsActivity extends PreferenceActivity implements Preference.OnPreferenceClickListener{
 
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+    Intent i;
+    SQLiteOpenHelper mOpenHelper;
+    public static final String table = "leave";
+    SQLiteDatabase db;
 
     @Override
+    @SuppressWarnings("deprecation")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -29,7 +48,21 @@ public class SettingsActivity extends PreferenceActivity {
         bindPreferenceSummaryToValue(findPreference(getString(R.string.reg_no_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pass_key)));
 
+        Preference logOutBtn =  findPreference("logOutBtn");
+        logOutBtn.setOnPreferenceClickListener(this);
+
+        Preference license =  findPreference("license");
+        license.setOnPreferenceClickListener(this);
+
+        Preference feedback =  findPreference("feedback");
+        feedback.setOnPreferenceClickListener(this);
+
+
+
+
         setupActionBar();
+
+
     }
 
     /**
@@ -113,6 +146,66 @@ public class SettingsActivity extends PreferenceActivity {
                 || !isXLargeTablet(context);
     }
 
+
+@Override
+@SuppressWarnings("deprecation")
+    public boolean onPreferenceClick(Preference preference) {
+        Log.i(LeaveAppClass.Log_Tag,"onPreferenceClick called");
+        if(preference.getKey().equals("logOutBtn")){
+            Log.i(LeaveAppClass.Log_Tag,"if called");
+            pref = PreferenceManager.getDefaultSharedPreferences(this);
+            editor = pref.edit();
+            editor.clear();
+            editor.commit();
+            dropTable();
+            restart();
+        }
+    else if(preference.getKey().equals("license")){
+            showBasicLongContent();
+        }
+    else if(preference.getKey().equals("feedback")){
+            Intent sendIntent = new Intent(Intent.ACTION_SEND);
+            sendIntent.setType("text/plain");
+            sendIntent.putExtra(Intent.EXTRA_EMAIL,"hello@gdgvitvellore.com");
+            sendIntent.putExtra(Intent.EXTRA_SUBJECT,"LeaveApp Feedback");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Feedback/Bug");
+            startActivity(Intent.createChooser(sendIntent, "Feedback"));
+        }
+        return true;
+    }
+
+    private void dropTable() {
+        db = mOpenHelper.getWritableDatabase();
+        final String sql = "drop table " + table;
+        Log.i(LeaveAppClass.Log_Tag,"drop table called");
+        try {
+            Log.e(LeaveAppClass.Log_Tag,"drop table called");
+            db.execSQL(sql);
+            setTitle(sql);
+        } catch (SQLException e) {
+            Log.e(LeaveAppClass.Log_Tag,"drop table called in catch block");
+            setTitle("exception");
+        }catch (NullPointerException npe){
+            Log.e(LeaveAppClass.Log_Tag,"null pointer exception npe");
+        }
+    }
+
+    private void showBasicLongContent() {
+        new MaterialDialog.Builder(this)
+                .title(R.string.license_name)
+                .content(R.string.mit_license)
+                .positiveText(R.string.done)
+                .show();
+    }
+
+    public void restart(){
+        i = getBaseContext().getPackageManager()
+                .getLaunchIntentForPackage( getBaseContext().getPackageName() );
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
+
     /**
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
@@ -144,6 +237,11 @@ public class SettingsActivity extends PreferenceActivity {
             return true;
         }
     };
+
+
+
+
+
 
     /**
      * Binds a preference's summary to its value. More specifically, when the

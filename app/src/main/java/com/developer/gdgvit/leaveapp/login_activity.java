@@ -39,6 +39,9 @@ public class login_activity extends Activity {
         pref = getSharedPreferences("Check",MODE_PRIVATE);
 
 
+
+
+
     }
 
 
@@ -57,8 +60,12 @@ public class login_activity extends Activity {
                 new CheckIdPass(getBaseContext()).putData("reg_no", reg);
                 new CheckIdPass(getBaseContext()).putData("pass",paswrd);
                 LeaveAppSyncAdapter.syncImmediately(this);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putBoolean("firstTime",true);
+                editor.commit();
                 calling();
                 finish();
+
             }
             else
             {

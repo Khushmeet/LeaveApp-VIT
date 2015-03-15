@@ -32,4 +32,32 @@
         android:summaryOn="@string/pref_enable_notifications_true"
         android:defaultValue="@string/pref_enable_notifications_default" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Accounts">
+
+        <Preference
+            android:title="Reset LeaveApp"
+            android:key="logOutBtn"
+            android:summary="Delete all data and begin again">
+            </Preference>
+        </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Others">
+
+        <Preference
+            android:title="Open Source Licenses"
+            android:key="license"
+            android:summary="License details for open source software"/>
+
+        <Preference
+            android:title="Send feedback"
+            android:key="feedback"
+            android:summary="Send us a mail"/>
+
+        <Preference
+            android:title="Build Version"
+            android:summary="1.0"/>
+        </PreferenceCategory>
 </PreferenceScreen>

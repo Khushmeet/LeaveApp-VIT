@@ -13,12 +13,4 @@
 
     </style>
 
-    <style name="PreferenceScreen" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="android:textColor">@color/colorPrimary</item>
-    </style>
-
-
-
-
-
 </resources>
