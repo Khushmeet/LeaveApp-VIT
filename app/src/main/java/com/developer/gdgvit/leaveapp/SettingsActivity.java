@@ -34,6 +34,8 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     Intent i;
+    int j;
+    String pass;
     SQLiteOpenHelper mOpenHelper;
     public static final String table = "leave";
     SQLiteDatabase db;
@@ -46,7 +48,6 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         addPreferencesFromResource(R.xml.login_prefs);
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.reg_no_key)));
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pass_key)));
 
         Preference logOutBtn =  findPreference("logOutBtn");
         logOutBtn.setOnPreferenceClickListener(this);

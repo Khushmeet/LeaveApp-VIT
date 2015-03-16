@@ -12,9 +12,9 @@
         android:textColor="@android:color/white"
         android:layout_marginTop="170dp"
         android:text="@string/app_signup"
-        android:textSize="40sp"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
+        android:textSize="38sp"
+        android:layout_alignLeft="@+id/login_btn"
+        android:layout_alignStart="@+id/login_btn"
         android:layout_alignRight="@+id/login_btn"
         android:layout_alignEnd="@+id/login_btn" />
 
@@ -32,8 +32,8 @@
         android:background="@drawable/login_text_up"
         android:layout_alignParentStart="true"
         android:focusableInTouchMode="true"
-        android:lines="1"
-        android:maxLines="1" />
+        android:singleLine="true"
+         />
 
     <EditText
         android:layout_width="match_parent"
